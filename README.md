@@ -1,1 +1,4 @@
-# db8ad685-9eed-4678-88e3-6562699c8b37
+# Team Y-AXIS
+## Project Id - B1JA01
+## Project Title - Amaze Pack
+Amaze Pack is an online store for purchasing gift items.
