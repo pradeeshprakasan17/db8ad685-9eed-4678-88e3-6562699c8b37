@@ -26,8 +26,10 @@
                             <div *ngIf="password?.invalid && password?.touched" class="text-danger">
                                 <small *ngIf="passwordcontrols?.['required']">Password is Required</small>
                                 <small *ngIf="passwordcontrols?.['pattern']">
-                                    Password should have minimum 8 characters including atleast<br>
-                                    *1[A-Z], 1[a-z],1[0-9],1[$@#$^!%*?&]<br>
+                                    Password should have atleast<br>
+                                    *minimum 8 characters<br>
+                                    *one capital letter, one small letter<br>
+                                    *one number,one special character
                                 </small>
                             </div>
                         </div>
