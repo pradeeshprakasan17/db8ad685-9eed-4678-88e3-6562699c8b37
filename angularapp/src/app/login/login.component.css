@@ -1,3 +1,9 @@
+input.ng-invalid.ng-touched{
+    border : 3px solid red;
+    background-image: none;
+    background-color: rgb(195, 161, 226) ;
+    
+}
 .container{
     padding: 15px 15px;
 }
@@ -9,14 +15,8 @@
     margin-top: 25vh;
 }
 #email, #password{
-    border: 1px solid gray;
     height: 7vh;
     background-image: linear-gradient(to right, white,rgb(157, 76, 233));
-}
-input.ng-invalid.ng-touched{
-    background-image: none;
-    background-color: rgb(195, 161, 226) ;
-    
 }
 .button-tag{
     text-align: center;
@@ -35,7 +35,9 @@ a{
     color: blueviolet;
     text-decoration: none;
 }
-
 #image{
     margin-top: 8vh; 
+}
+#h1{
+    margin-left: 20px;
 }
