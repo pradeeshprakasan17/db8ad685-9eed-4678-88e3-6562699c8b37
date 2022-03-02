@@ -7,9 +7,9 @@ export class LoginService {
 
   constructor(private http:HttpClient) { }
 
-  url = 'http://localhost:8080/login';
+  url = 'http://localhost:8080/login/{email}&{password}';
 
-  loginService(userData : any){
-    return this.http.post<any>(this.url, userData);
+  loginService(loginData : any){
+    return this.http.get<any>(this.url, loginData);
   }
 }
