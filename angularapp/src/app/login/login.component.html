@@ -16,21 +16,15 @@
                             <input id="email" class="form-control" type="email" placeholder="Enter Email" formControlName="email"
                             [class.is-invalid] = "email?.invalid && email?.touched">
                             <div *ngIf="email?.invalid && email?.touched" class="text-danger">
-                                <small *ngIf="emailcontrols?.['required']">Email is Required</small>
-                                <small *ngIf="emailcontrols?.['pattern']">Email is Invalid</small>
+                                <small *ngIf="emailcontrols?.['required']">{{errorMessage.email.required}}</small>
+                                <small *ngIf="emailcontrols?.['pattern']">{{errorMessage.email.pattern}}</small>
                             </div>
                         </div><br>
                         <div class="form-group">
                             <input id="password" class="form-control" type="password" placeholder="Enter Password" formControlName="password"
                             [class.is-invalid] = "password?.invalid && password?.touched">
                             <div *ngIf="password?.invalid && password?.touched" class="text-danger">
-                                <small *ngIf="passwordcontrols?.['required']">Password is Required</small>
-                                <small *ngIf="passwordcontrols?.['pattern']">
-                                    Password should have atleast<br>
-                                    *minimum 8 characters<br>
-                                    *one capital letter, one small letter<br>
-                                    *one number,one special character
-                                </small>
+                                <small *ngIf="passwordcontrols?.['required']">{{errorMessage.password.required}}</small>
                             </div>
                         </div>
                     </div>
