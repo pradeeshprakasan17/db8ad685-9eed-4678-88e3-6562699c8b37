@@ -7,20 +7,30 @@ import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CartComponent } from './cart/cart.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { OrdersComponent } from './orders/orders.component';
+import { UserNavbarComponent } from './user-navbar/user-navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     LoginComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CartComponent,
+    HomepageComponent,
+    OrdersComponent,
+    UserNavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
