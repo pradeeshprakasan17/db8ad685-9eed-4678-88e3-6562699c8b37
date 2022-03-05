@@ -6,6 +6,9 @@ import { SignupComponent } from './signup/signup.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CartComponent } from './cart/cart.component';
 import { OrdersComponent } from './orders/orders.component';
+import { UserDisplayComponent } from './user-display/user-display.component';
+import { UserUpdateComponent } from './user-update/user-update.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
   {path:"",redirectTo:'/login',pathMatch:'full'},
@@ -14,6 +17,9 @@ const routes: Routes = [
   {path:"home",component:HomepageComponent},
   {path:"cart",component:CartComponent},
   {path:"orders",component:OrdersComponent},
+  {path: 'user', component: UserDisplayComponent},
+  {path: 'update-user/:id', component: UserUpdateComponent},
+  {path: 'dashboard', component:AdminDashboardComponent},
   {path:"**",component:NotFoundComponent}
 ];
 

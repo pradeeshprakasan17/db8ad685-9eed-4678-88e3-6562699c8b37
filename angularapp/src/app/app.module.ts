@@ -4,6 +4,7 @@ import { FormsModule} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +16,9 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { UserNavbarComponent } from './user-navbar/user-navbar.component';
 import { CartComponent } from './cart/cart.component';
 import { OrdersComponent } from './orders/orders.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { UserDisplayComponent } from './user-display/user-display.component';
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,10 @@ import { OrdersComponent } from './orders/orders.component';
     HomepageComponent,
     UserNavbarComponent,
     CartComponent,
-    OrdersComponent 
+    OrdersComponent,
+    AdminDashboardComponent,
+    UserDisplayComponent,
+    UserUpdateComponent 
   ],
   imports: [
     BrowserModule,
@@ -33,6 +40,7 @@ import { OrdersComponent } from './orders/orders.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    Ng2SearchPipeModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule

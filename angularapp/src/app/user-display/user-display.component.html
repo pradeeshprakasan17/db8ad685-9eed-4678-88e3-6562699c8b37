@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+        <a routerLink="/user" routerLinkActive="active" class="nav-link"><B>Display User</B></a>
+  </li>
+  
+
+</ul>
+<input class="form-control" type="text" name="username"[(ngModel)]="username" (ngModelChange)="Search()"
+placeholder="Enter name to search">
+<li class="nav-item">
+    <a routerLink="/dashboard" routerLinkActive="active" class="nav-link"><B>Go To dashboard</B></a>
+</li>
+</nav>
+<div>
+
+        <h1 style="color:rgb(59, 1, 52); font-family:verdana;"><B> USER DETAILS MANAGEMENT </B></h1>
+       
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Email_Id</th>
+            <th>Phone_No</th>
+            <th>Password</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let user of user">
+            <td>{{user.username}}</td>
+            <td>{{user.userRole}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.mobileNumber}}</td>
+            <td>{{user.password}}</td>
+            <td>
+                <button (click) = "updateUser(user.id)" class="btn btn-info"><b>EDIT</b></button>
+                <button (click) = "deleteUser(user.id)" class="btn btn-danger" style="margin-left: 10px"><b>DELETE</b></button>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<footer class="footer">
+    <div class="icons">
+        <span><B>Copyright @Amazepack</B></span>
+    <i class=" fa fa-facebook"></i>
+    <i class=" fa fa-twitter"></i>
+    <i class=" fa fa-instagram"></i>
+    <i class=" fa fa-linkedin"></i>  
+    </div>
+</footer>
+ 
