@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { SignupService } from './signup.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { SignupService } from './signup.service';
 })
 export class SignupComponent implements OnInit {
 
-constructor(private formbuilder: FormBuilder,private signUpService: SignupService) { }
+constructor(private formbuilder: FormBuilder,private signUpService: SignupService,private router:Router) { }
 
 emailRegex = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" 
             + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
@@ -54,11 +55,12 @@ onSubmit(){
   
 console.log(this.signUpForm.value);
 
-this.signUpService.signupService(this.signUpForm.value)
+this.signUpService.signupSave(this.signUpForm.value)
 .subscribe(
     response => console.log('Success!', response),
     error => console.log('Error!', error)
 );
+this.router.navigate(['/']);
 }
 
 setUserRole(){

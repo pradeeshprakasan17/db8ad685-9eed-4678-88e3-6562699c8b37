@@ -9,7 +9,8 @@ export class SignupService {
 
   url = 'http://localhost:8080/signup';
 
-  signupService(signupData : any){
+  signupSave(signupData : any){
     return this.http.post<any>(this.url, signupData);
   }
+
 }

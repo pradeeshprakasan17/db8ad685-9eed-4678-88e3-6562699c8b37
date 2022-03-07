@@ -1,7 +1,14 @@
-<mat-toolbar>
-    <span>AmazePack</span>
-    <a mat-button routerLink="/home">Home</a>
-    <a mat-button routerLink="/cart">Cart</a>
-    <a mat-button routerLink="/orders">My Orders</a>
-    <a mat-button routerLink="/login" color="accent">LogOut</a>
+<mat-toolbar id="navbar-tag" class="bg-dark text-white pt-1 pb-1">
+    <span style="font-size:25px; text-decoration:none;" class="text-warning">
+        <i class="bi bi-gift-fill"></i>AmazePack</span>
+
+    <div class="nav-button-tag">
+    <a mat-button class="mat-button" routerLink="/home" ><i class="bi bi-house-fill"></i>Home</a>
+    <a mat-button class="mat-button" routerLink="/cart" ><i class="bi bi-cart-fill"></i>Cart</a>
+    <a mat-button class="mat-button" routerLink="/orders"><i class="bi bi-bag-fill"></i>My Orders</a>
+    </div>
+
+    <div class="logout-tag">
+    <a mat-button class="logout-button" routerLink="/login" color="blue"><i class="bi bi-box-arrow-right"></i>LogOut</a>
+    </div>
 </mat-toolbar>

@@ -19,6 +19,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UserDisplayComponent } from './user-display/user-display.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
+import { FooterHomepageComponent } from './footer-homepage/footer-homepage.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { UserUpdateComponent } from './user-update/user-update.component';
     OrdersComponent,
     AdminDashboardComponent,
     UserDisplayComponent,
-    UserUpdateComponent 
+    UserUpdateComponent,
+    FooterHomepageComponent 
   ],
   imports: [
     BrowserModule,

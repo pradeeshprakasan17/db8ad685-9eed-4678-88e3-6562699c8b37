@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
 .subscribe(
     response => console.log('Success!', response),
     error => console.log('Error!', error)
-);
+  );
+
   }
 
   get email(){
