@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductItems } from './productItems';
+import { Product } from '../product-service/product';
 
 @Component({
   selector: 'app-homepage',
@@ -8,8 +8,13 @@ import { ProductItems } from './productItems';
 })
 export class HomepageComponent implements OnInit {
   
-  productItems : ProductItems[] = [
-    {id:1},{id:2},{id:3},{id:4},{id:5},{id:6}
+  productItems : Product[] = [
+    { id:1,
+      product_name: "Key_Chain",
+      product_price: 1000,
+      product_img: "./../assets/images/login-main.png",
+      product_desc: "This gift items from the amaze pack online site",
+      product_quantity: 2}
   ];
 
   gridColumns = 3;

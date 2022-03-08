@@ -1,1 +1,61 @@
-<p>product-display works!</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+        <a routerLink="/display-product" routerLinkActive="active" class="nav-link"><B>Display Products</B></a>
+  </li>
+  <li class="nav-item active">
+    <a routerLink="/add-product" routerLinkActive="active" class="nav-link"><B>Add Products</B></a>
+</li>
+
+</ul>
+<input class="form-control" type="text" name="product_name"[(ngModel)]="product_name" (ngModelChange)="Search()"
+placeholder="Enter name of product to search">
+<li class="nav-item">
+    <a routerLink="/dashboard" routerLinkActive="active" class="nav-link"><B>Go To dashboard</B></a>
+</li>
+</nav>
+<div>
+
+        <h1 style="color:rgb(59, 1, 52); font-family:verdana;"><B> PRODUCT MANAGEMENT </B></h1>
+       
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let product of product">
+            <td>{{product.id}}</td>
+            <td>{{product.product_name}}</td>
+            <td>{{product.product_price}}</td>
+            <td>{{product.product_desc}}</td>
+            <td>{{product.product_quantity}}</td>
+            <td><img src="{{product.product_img}}"height="50" width="50"></td>
+           
+            <td>
+                <button (click) = "updateProduct(product.id)" class="btn btn-info"><b>EDIT</b></button>
+                <button (click) = "deleteProduct(product.id)" class="btn btn-danger" style="margin-left: 10px"><b>DELETE</b></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<footer class="footer">
+    <div class="icons">
+        <span><B>Copyright @Amazepack</B></span>
+    <i class=" fa fa-facebook"></i>
+    <i class=" fa fa-twitter"></i>
+    <i class=" fa fa-instagram"></i>
+    <i class=" fa fa-linkedin"></i>  
+    </div>
+</footer>
+ 

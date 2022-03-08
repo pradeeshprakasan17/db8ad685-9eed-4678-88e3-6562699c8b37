@@ -27,7 +27,6 @@ import { UserUpdateComponent } from './user-update/user-update.component';
 import { FooterHomepageComponent } from './footer-homepage/footer-homepage.component';
 import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductDisplayComponent } from './product-display/product-display.component';
-import { ProductServiceComponent } from './product-service/product-service.component';
 import { ProductUpdateComponent } from './product-update/product-update.component';
 
 
@@ -47,7 +46,6 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
     FooterHomepageComponent,
     ProductAddComponent,
     ProductDisplayComponent,
-    ProductServiceComponent,
     ProductUpdateComponent 
   ],
   imports: [

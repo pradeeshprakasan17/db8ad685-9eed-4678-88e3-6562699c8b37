@@ -1,1 +1,61 @@
-<p>product-update works!</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+        <a routerLink="/display-product" routerLinkActive="active" class="nav-link"><B>Display Products</B></a>
+  </li>
+  <li class="nav-item active">
+    <a routerLink="/add-product" routerLinkActive="active" class="nav-link"><B>Add Products</B></a>
+</li>
+
+</ul>
+<li class="nav-item">
+    <a routerLink="/dashboard" routerLinkActive="active" class="nav-link"style="margin-left: 1200px"><B>Go To dashboard</B></a>
+</li>
+</nav>
+<div class="col-md-6 offset-md-3">
+    <h2 style="color:red; font-family:verdana;"><B>  EDIT PRODUCT DETAILS </B></h2>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label> Name </label>
+            <input type="text" class="form-control" id="product_name"
+            [(ngModel)] ="product.product_name" name="product_name">
+        </div>
+        <div class="form-group">
+            <label>Price </label>
+            <input type="text" class="form-control" id="product_price"
+            [(ngModel)] ="product.product_price" name="product_price">
+        </div>
+        <div class="form-group">
+            <label>Image </label>
+            <input type="text" class="form-control" id="product_img"
+            [(ngModel)] ="product.product_img" name="product_img">
+        </div>
+        <div class="form-group">
+            <label>Description </label>
+            <input type="text" class="form-control" id="product_desc"
+            [(ngModel)] ="product.product_desc" name="product_desc">
+        </div>
+        <div class="form-group">
+            <label>Quantity </label>
+            <input type="text" class="form-control" id="product_quantity"
+            [(ngModel)] ="product.product_quantity" name="product_quantity">
+        </div>
+        <div class="form-group">
+          <p>
+    
+    
+          </p>
+        </div>
+    <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+    </div>
+    <footer class="footer">
+        <div class="icons">
+            <span><B>Copyright @Amazepack</B></span>
+        <i class=" fa fa-facebook"></i>
+        <i class=" fa fa-twitter"></i>
+        <i class=" fa fa-instagram"></i>
+        <i class=" fa fa-linkedin"></i>  
+        </div>
+    </footer>
