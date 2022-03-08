@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product-service/product';
+import { ProductService } from '../product-service/product.service';
 
 @Component({
   selector: 'app-homepage',
@@ -14,14 +15,28 @@ export class HomepageComponent implements OnInit {
       product_price: 1000,
       product_img: "./../assets/images/login-main.png",
       product_desc: "This gift items from the amaze pack online site",
-      product_quantity: 2}
+      product_quantity: 2
+    },
+    { id:2,
+      product_name: "Chain",
+      product_price: 1500,
+      product_img: "./../assets/images/login-main.png",
+      product_desc: "This chain items from the amaze pack online site",
+      product_quantity: 0
+    },
   ];
 
   gridColumns = 3;
 
-  constructor() { }
+  constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
+    this.getProduct();
   }
 
+  private getProduct(){
+    this.productService.getProductList().subscribe(data => {
+      this.productItems=data;
+    }); 
+  }
 }
