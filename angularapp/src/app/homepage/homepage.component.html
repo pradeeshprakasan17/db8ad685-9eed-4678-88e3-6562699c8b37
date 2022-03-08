@@ -1,10 +1,39 @@
 <div id="userNavbar">
     <app-user-navbar></app-user-navbar>
 </div>
-<br>
-<div id="productHomeBody">
-    <h1>Home Page Works</h1>
+
+<div id="productHomeBody" class="content">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let product of productItems">
+          <mat-card id="grid{{product.id}}"class="mat-elevation-z4">
+            <mat-card-header class="bg-dark text-white pt-1 pb-1">
+              <mat-card-title><i class="bi bi-gift"></i> Product Title {{product.id}}</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content class="img-content">
+                <img mat-card-image src="./../assets/images/login-main.png">
+            </mat-card-content>
+
+            <mat-card-content class="description-content">
+              <p><i class="bi bi-info-circle-fill"></i>
+                This gift items from the amaze pack online site
+              </p>
+            </mat-card-content>
+
+            <mat-card-content class="price-content">
+                <p><i class="bi bi-tags-fill"></i> &#8377;1000</p>
+            </mat-card-content>
+
+            <mat-card-actions>
+              <button mat-button>Add To Cart <i class="bi bi-cart-plus-fill"></i></button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    
 </div>
+
+
 <div id="footer-tag">
     <app-footer-homepage></app-footer-homepage>
 </div>

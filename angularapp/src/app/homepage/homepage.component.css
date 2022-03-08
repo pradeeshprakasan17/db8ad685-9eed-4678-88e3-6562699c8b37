@@ -1,3 +1,41 @@
+.mat-card-header{
+    justify-content: center;
+}
+.mat-card-title{
+    margin-top: 5px;
+}
+
+.img-content{
+    padding: 16px;
+}
+.mat-card-image{
+    border:2px solid grey;
+}
+
+.mat-elevation-z4{
+    background-color: whitesmoke;
+}
+
 #productHomeBody{
-    background-color: lightgray;
+    background-color: rgb(243, 243, 176);
+    padding: 16px;
+}
+.price-content{
+    text-align: center;
+    font-size: 20px;
+}
+.mat-card-actions{
+    text-align: right;
+}
+.mat-button{
+    background-color: lightgrey;
+    color:green;
+    font-size: 16px;
+    width:165px;
+    height: 45px;
+}
+.mat-button:hover{
+    background-color: green;
+    color: white;
+    font-size: 20px;
 }
