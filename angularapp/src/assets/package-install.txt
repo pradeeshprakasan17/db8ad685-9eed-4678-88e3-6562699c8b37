@@ -1,3 +1,6 @@
+//Create New Angularapp
+ng new angularapp
+
 //Installing Angular Material
 ng add @angular/material
 
