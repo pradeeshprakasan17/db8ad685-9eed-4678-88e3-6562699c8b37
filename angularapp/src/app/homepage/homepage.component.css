@@ -25,6 +25,9 @@
     display: flex;
     flex-direction: row;
 }
+#price-tag{
+    font-size:25px;
+}
 .mat-card-actions{
     text-align: right;
 }
