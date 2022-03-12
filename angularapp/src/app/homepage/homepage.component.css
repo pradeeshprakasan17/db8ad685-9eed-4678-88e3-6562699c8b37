@@ -38,7 +38,7 @@
     width:165px;
     height: 45px;
 }
-.mat-button:hover{
+.mat-button:hover:enabled{
     background-color: green;
     color: white;
     font-size: 20px;

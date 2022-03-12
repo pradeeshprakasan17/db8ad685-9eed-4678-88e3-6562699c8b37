@@ -1,7 +1,68 @@
 <div id="userNavbar">
     <app-user-navbar></app-user-navbar>
 </div>
-<p>cart works!</p>
+
+<ng-container *ngIf="product.length!=0">
+    <div class="container">
+        <div class="card-table">
+            <div class="cart-product">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Sr.no</th>
+                            <th>Product Name</th>
+                            <th>Product Image</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of product; let i=index">
+                            <td>{{i+1}}</td>
+                            <td>{{item.product_name}}</td>
+                            <td><img src="{{item.product_img}}" height="75" width="75"></td>
+                            <td>{{item.product_price}}</td>
+                            <td><button type="button" class="btnn"><i class="fa fa-plus"></i></button>
+                                <span>{{item.product_quantity}}</span>
+                                <button type="button" class="btnn"><i class="fa fa-minus"></i></button>
+                            
+                            </td>
+                            <td>{{item.product_price*item.product_quantity}}</td>
+                            <td><button (click)="removeItem(item)" class="btn btn-danger">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td><button (click)="emptyCart()" class="btn btn-danger">Delete Cart</button></td>
+                            <td><button routerLink="/home" class="btn btn-primary">Shop More</button></td>
+                            <td><button class="btn btn-success">Checkout</button></td>
+                            <td><strong><h2>Grand Total:{{grandTotal}}</h2></strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+         </div>
+      </div>
+</ng-container>
+
+
+<ng-container *ngIf="product.length==0">
+    <div class="container">
+        <div class="card">
+            <h3 class="card-title">My Cart</h3>
+        </div>
+        <div class="center">
+            <h1>
+                Your Cart is Empty!!
+             </h1>
+             <h2>Add Items to it Now</h2>
+             <button routerLink="/home" class="btn btn-primary">Shop Now</button>
+        </div>
+        
+    </div>
+</ng-container>
+
 <div id="footer-tag">
     <app-footer-homepage></app-footer-homepage>
 </div>

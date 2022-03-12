@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product-service/product';
 import { ProductService } from '../product-service/product.service';
+import { CartService } from '../cart-service/cart.service';
 
 @Component({
   selector: 'app-homepage',
@@ -28,7 +29,7 @@ export class HomepageComponent implements OnInit {
 
   gridColumns = 3;
 
-  constructor(private productService:ProductService) { }
+  constructor(private productService:ProductService,private cartService:CartService) { }
 
   ngOnInit(): void {
     this.getProduct();
@@ -38,5 +39,16 @@ export class HomepageComponent implements OnInit {
     this.productService.getProductList().subscribe(data => {
       this.productItems=data;
     }); 
+  }
+
+  addToCart(product:any)
+  {
+    this.cartService.addToCart(product);
+    window.alert("Product Added To Cart!!")
+  }
+
+  quantityCheck(value : any){
+      if(value == 0){ return true; }
+      else{ return false; }
   }
 }
