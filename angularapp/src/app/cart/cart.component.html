@@ -1,7 +1,7 @@
 <div id="userNavbar">
     <app-user-navbar></app-user-navbar>
 </div>
-
+<div id="cartBody">
 <ng-container *ngIf="product.length!=0">
     <div class="container">
         <div class="card-table">
@@ -46,7 +46,6 @@
       </div>
 </ng-container>
 
-
 <ng-container *ngIf="product.length==0">
     <div class="container">
         <div class="card">
@@ -58,11 +57,10 @@
              </h1>
              <h2>Add Items To It Now</h2>
              <button routerLink="/home" class="btn btn-primary">Shop Now</button>
-        </div>
-        
+        </div>  
     </div>
 </ng-container>
-
+</div>
 <div id="footer-tag">
     <app-footer-homepage></app-footer-homepage>
 </div>
