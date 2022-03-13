@@ -16,14 +16,14 @@ export class HomepageComponent implements OnInit {
       product_price: 1000,
       product_img: "./../assets/images/login-main.png",
       product_desc: "This gift items from the amaze pack online site",
-      product_quantity: 2
+      product_quantity: 10
     },
     { id:2,
       product_name: "Chain",
       product_price: 1500,
       product_img: "./../assets/images/login-main.png",
       product_desc: "This chain items from the amaze pack online site",
-      product_quantity: 0
+      product_quantity: 5
     },
   ];
 
@@ -44,7 +44,6 @@ export class HomepageComponent implements OnInit {
   addToCart(product:any)
   {
     this.cartService.addToCart(product);
-    window.alert("Product Added To Cart!!")
   }
 
   quantityCheck(value : any){

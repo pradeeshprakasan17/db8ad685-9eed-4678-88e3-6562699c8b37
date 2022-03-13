@@ -16,8 +16,7 @@
 
             <mat-card-content class="description-content">
               <p><i class="bi bi-info-circle-fill"></i>
-                {{product.product_desc}}
-              </p>
+                {{product.product_desc}}</p>
             </mat-card-content>
 
             <div class="priceQuantity-content">
@@ -30,7 +29,8 @@
               <span *ngIf="product.product_quantity!=0" class="text-success">
                 <strong><i class="bi bi-check-circle-fill"></i> In Stock</strong></span>
 
-              <button (click)="addToCart(product)" [disabled]="quantityCheck(product.product_quantity)" mat-button><strong>Add To Cart</strong> <i class="bi bi-cart-plus-fill"></i></button>
+              <button (click)="addToCart(this.product)" [disabled]="quantityCheck(product.product_quantity)" mat-button>
+                <strong>Add To Cart</strong> <i class="bi bi-cart-plus-fill"></i></button>
             </mat-card-actions>
           </mat-card>
         </div>

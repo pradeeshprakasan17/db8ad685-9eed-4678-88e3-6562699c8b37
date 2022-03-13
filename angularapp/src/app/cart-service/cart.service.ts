@@ -1,36 +1,42 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+
 @Injectable({
   providedIn:'root'
 })
 export class CartService{
   public cartItemList : any=[]
   public productList=new BehaviorSubject<any>([]);
+  public search=new BehaviorSubject<string>("");
 
-      constructor(){}
-      getProduct()
-      {
-        return this.productList.asObservable();
-      }
-      setProduct(product : any)
-      {
-        this.cartItemList.push(...product);
-        this.productList.next(product);
+    constructor(){}
+    getProduct()
+    {
+       return this.productList.asObservable();
+    }
+    setProduct(product : any)
+    {
+      this.cartItemList.push(...product);
+      this.productList.next(product);
     }
     addToCart(product:any)
     {
-      this.cartItemList.push(product);
-      this.productList.next(this.cartItemList);
-      this.getTotalPrice(product);
-      console.log(this.cartItemList)
-    }
-    getTotalPrice(product:any) : number
-    {
-      let grandTotal=0;
-      this.cartItemList.map((product:any)=>{
-        grandTotal += product.product_price;
-      })
-      return grandTotal;
+      let productExists=false
+      for(let i in this.cartItemList)
+      {
+        if(this.cartItemList[i].id===product.id)
+        {
+          this.cartItemList[i].quantity++;
+          productExists=true;
+          break;
+        }
+      }
+      if(!productExists){
+        Object.assign(product,{'quantity':1});
+        this.cartItemList.push(product);
+        this.productList.next(this.cartItemList);
+        window.alert("Product Added To Cart!!");
+      }
     }
     removeCartItem(product:any){
       this.cartItemList.map((a:any,index:any)=>{
@@ -39,10 +45,12 @@ export class CartService{
           this.cartItemList.splice(index,1);
         }
       })
+      this.productList.next(this.cartItemList);
     }
     removeAllCart()
     {
-      this.cartItemList=[]
+      this.cartItemList=[];
       this.productList.next(this.cartItemList);
     }
+    
 }
