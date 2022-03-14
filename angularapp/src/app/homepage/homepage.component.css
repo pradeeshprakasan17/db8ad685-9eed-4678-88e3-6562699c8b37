@@ -11,7 +11,11 @@
 .mat-card-image{
     border:2px solid grey;
 }
-
+.description-content{
+    padding: 10px;
+    height: 50px;
+    margin-left: 20px;
+}
 .mat-elevation-z4{
     background-color: whitesmoke;
 }
@@ -28,18 +32,32 @@
 #price-tag{
     font-size:25px;
 }
-.mat-card-actions{
-    text-align: right;
-}
 .mat-button{
     background-color: lightgrey;
     color:green;
     font-size: 16px;
     width:165px;
     height: 45px;
+    border: 2px green;
+    border-style: solid;
+    border-radius: 25px;
 }
 .mat-button:hover:enabled{
     background-color: green;
     color: white;
     font-size: 20px;
+    border: 3px whitesmoke;
+    border-style: solid;
+    border-radius: 25px;
+}
+.mat-card-actions{
+    display: flex;
+    flex-direction: row;
+}
+.stock{
+    margin-top: 12px;
+    width: 170px;
+}
+#addCartButton{
+    margin-left: 60px;
 }

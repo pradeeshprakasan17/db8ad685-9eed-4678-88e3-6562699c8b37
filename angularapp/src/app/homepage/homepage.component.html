@@ -5,7 +5,7 @@
 <div id="productHomeBody" class="content">
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
         <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let product of productItems">
-          <mat-card id="grid{{product.id}}"class="mat-elevation-z4">
+          <mat-card id="grid{{product.id}}" class="mat-elevation-z4">
             <mat-card-header class="bg-dark text-white pt-1 pb-1">
               <mat-card-title><i class="bi bi-gift"></i>{{product.product_name}}</mat-card-title>
             </mat-card-header>
@@ -24,13 +24,16 @@
             </div>
 
             <mat-card-actions>
+              <div class="stock">
               <span *ngIf="product.product_quantity==0" class="text-danger">
                 <strong><i class="bi bi-x-circle-fill"></i> Out of Stock</strong></span>
               <span *ngIf="product.product_quantity!=0" class="text-success">
                 <strong><i class="bi bi-check-circle-fill"></i> In Stock :{{product.product_quantity}} Left</strong></span>
-
+              </div>
+              <div id="addCartButton">
               <button (click)="addToCart(this.product)" [disabled]="quantityCheck(product.product_quantity)" mat-button>
                 <strong>Add To Cart</strong> <i class="bi bi-cart-plus-fill"></i></button>
+              </div>
             </mat-card-actions>
           </mat-card>
         </div>
