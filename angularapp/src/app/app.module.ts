@@ -12,6 +12,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Angular Component Import
 import { AppComponent } from './app.component';
@@ -29,6 +33,7 @@ import { FooterHomepageComponent } from './footer-homepage/footer-homepage.compo
 import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductDisplayComponent } from './product-display/product-display.component';
 import { ProductUpdateComponent } from './product-update/product-update.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 @NgModule({
@@ -47,7 +52,8 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
     FooterHomepageComponent,
     ProductAddComponent,
     ProductDisplayComponent,
-    ProductUpdateComponent 
+    ProductUpdateComponent,
+    PaymentComponent 
   ],
   imports: [
     BrowserModule,
@@ -61,7 +67,11 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

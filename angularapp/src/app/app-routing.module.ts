@@ -12,6 +12,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { ProductDisplayComponent } from './product-display/product-display.component';
 import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductUpdateComponent } from './product-update/product-update.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   {path:"",redirectTo:'/login',pathMatch:'full'},
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path:'display-product', component:ProductDisplayComponent},
   {path:'add-product', component:ProductAddComponent},
   {path:'update-product/:id', component:ProductUpdateComponent},
+  {path:'payment', component:PaymentComponent},
   {path:"**",component:NotFoundComponent}
 ];
 
