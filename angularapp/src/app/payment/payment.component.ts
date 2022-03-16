@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { PaymentService } from './payment.service';
 
 @Component({
   selector: 'app-payment',
@@ -9,7 +10,35 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class PaymentComponent implements OnInit {
 
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private paymentService:PaymentService,private formBuilder:FormBuilder) { }
+
+  amount= 500 * 100;
+  options = {
+    "key": "rzp_test_7HdkaZ1xFGPomB", 
+    "amount": this.amount, 
+    "currency": "INR",
+    "name": "Amaze Pack",
+    "description": "Test Transaction",
+    "image": "../../assets/images/login-main.png",
+    "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
+    "order_id":"",
+    "prefill": {
+        "name": "User",
+        "email": "user@example.com",
+        "contact": "9999999999"
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#3399cc"
+    }
+  };
+
+  razorPay(){
+    let rzp1 = new this.paymentService.nativeWindow.Razorpay(this.options);
+    rzp1.open();
+  }
 
   shippingForm = this.formBuilder.group({
     name : ['',Validators.required],

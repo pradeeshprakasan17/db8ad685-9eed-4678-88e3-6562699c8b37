@@ -3,7 +3,7 @@
         <form [formGroup]="shippingForm">
             <div class="form-container">
             <ng-template matStepLabel><i class="bi bi-truck"></i>Shipping Address</ng-template> 
-            <p>Fill Out Shipping Address</p>
+            <p style="font-weight: bold;"><i class="bi bi-pencil-fill"></i> Fill Out Shipping Address</p>
 
             <mat-form-field appearance="outline">
                 <mat-label>Name</mat-label>
@@ -50,12 +50,17 @@
                 <mat-error *ngIf="phoneNumberInvalid">{{phoneNumberErrorMsg()}}</mat-error>
             </mat-form-field>
 
-            <button class="btn btn-primary" mat-button matStepperNext [disabled]="!shippingForm.valid">Next</button>
+            <button mat-button matStepperNext [disabled]="!shippingForm.valid">Next <i class="bi bi-arrow-right-circle"></i></button>
+            <mat-hint *ngIf="!shippingForm.valid">Fill Address to go payment process</mat-hint>
         </div>
         </form>
+        
     </mat-step>
 
     <mat-step label="Payment" completed="false">
+        <div class="container">
+            <button (click)="razorPay()">Pay</button>
+        </div>
         <button mat-button matStepperNext>Next</button>
     </mat-step>
 
