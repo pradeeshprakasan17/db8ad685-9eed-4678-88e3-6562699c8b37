@@ -10,7 +10,22 @@ import { CartService } from '../cart-service/cart.service';
 })
 export class HomepageComponent implements OnInit {
   
-  productItems : Product[] = [];
+  productItems : Product[] = [
+    {id: 1,
+    product_name: "Key Chain",
+    product_price: 1500,
+    product_img: "../../assets/images/login-main.png",
+    product_desc: "hjbcbbb asiuucnc basbnclac cbanca",
+    product_quantity: 105
+    },
+    {id: 2,
+      product_name: "Chain",
+      product_price: 1054,
+      product_img: "../../assets/images/login-main.png",
+      product_desc: "hscsb asiuucnc basbnclac cbanca",
+      product_quantity: 115
+      }
+  ];
 
   gridColumns = 3;
 

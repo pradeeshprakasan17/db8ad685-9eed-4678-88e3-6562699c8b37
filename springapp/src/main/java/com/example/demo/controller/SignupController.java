@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.User;
@@ -14,12 +15,19 @@ import com.example.demo.services.UserService;
 
 @CrossOrigin(origins="*")
 @RestController
-public class SignupController {
+@RequestMapping("/api/v1/")
+public class SignupController { 
 
 	@Autowired
     public UserService userservice;
 
-    @GetMapping("/User")
+    public SignupController(UserService userservice) {
+		super();
+		this.userservice = userservice;
+	}
+
+     
+	@GetMapping("/User")
 	public List<User> getAll(){
 		return userservice.getAll();
 	}
@@ -29,5 +37,7 @@ public class SignupController {
 	public User saveUser(@RequestBody User user) {
 		return userservice.saveUser(user);
 	}
+	
+	
 }
 
