@@ -5,6 +5,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SignupComponent } from './signup/signup.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CartComponent } from './cart/cart.component';
+import { CartCheckoutComponent } from './cart-checkout/cart-checkout.component';
 import { OrdersComponent } from './orders/orders.component';
 import { UserDisplayComponent } from './user-display/user-display.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path:'add-product', component:ProductAddComponent},
   {path:'update-product/:id', component:ProductUpdateComponent},
   {path:'details-product/:id', component:ProductDetailsComponent},
+  {path:"checkout",component:CartCheckoutComponent},
   {path:'payment', component:PaymentComponent},
   {path:"**",component:NotFoundComponent}
 ];
