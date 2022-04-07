@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from '../user-service/user';
-import { UserService } from '../user-service/user.service';
+import { User } from 'src/services/user-service/user';
+import { UserService } from 'src/services/user-service/user.service'; 
 
 @Component({
   selector: 'app-user-update',

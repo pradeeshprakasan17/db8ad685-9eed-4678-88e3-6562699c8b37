@@ -54,18 +54,35 @@
             <mat-hint *ngIf="!shippingForm.valid">Fill Address to go payment process</mat-hint>
         </div>
         </form>
-        
     </mat-step>
 
-    <mat-step label="Payment" completed="false">
+    <mat-step completed="true">
+        <ng-template matStepLabel><i class="bi bi-cash-coin"></i>Payment</ng-template>
         <div class="container">
-            <button (click)="razorPay()">Pay</button>
-        </div>
-        <button mat-button matStepperNext>Next</button>
-    </mat-step>
+            <div class="detail-tag">
+                <label class="option"><i class="bi bi-file-person"></i>Name <span id="comma">:</span> </label>
+                <span class="values">{{options.prefill.name}}</span>
+            </div>
+            <div class="detail-tag">
+                <label class="option"><i class="bi bi-envelope-paper"></i>Email <span id="comma">:</span> </label>
+                <span class="values">{{options.prefill.email}}</span>
+            </div> 
+            <div class="detail-tag">
+                <label class="option"><i class="bi bi-geo-alt"></i>Address : </label>
+                <span class="values">{{shippingForm.value.addressLine}},<br>
+                <span id="line2">{{shippingForm.value.city}},{{shippingForm.value.state}},</span><br>
+                <span id="line3">{{shippingForm.value.pincode}}.</span>
+                </span>
+            </div>
 
-    <mat-step label="Done" completed="false">
-        <p>Done</p>
+            <div class="total-tag">
+                <label id="pay-tag"> Amount To Be Paid : </label>
+                <span id="pay-value">&#8377;{{payableAmount}}</span>
+            </div>
+            <div class="pay-button">
+                <button (click)="razorPay()" mat-button matStepperNext id="pay">Pay</button>
+            </div>
+        </div>
     </mat-step>
 
 </mat-horizontal-stepper>

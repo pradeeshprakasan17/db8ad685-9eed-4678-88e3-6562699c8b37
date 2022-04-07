@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { PaymentService } from './payment.service';
-
+import { Router } from '@angular/router';
+import { PaymentService } from 'src/services/payment.service'; 
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -9,18 +9,25 @@ import { PaymentService } from './payment.service';
 })
 export class PaymentComponent implements OnInit {
 
+  constructor(private paymentService:PaymentService,private formBuilder:FormBuilder,private router:Router) { }
 
-  constructor(private paymentService:PaymentService,private formBuilder:FormBuilder) { }
+  payableAmount = 500;
 
-  amount= 500 * 100;
   options = {
     "key": "rzp_test_7HdkaZ1xFGPomB", 
-    "amount": this.amount, 
+    "amount": this.payableAmount * 100, 
     "currency": "INR",
     "name": "Amaze Pack",
     "description": "Test Transaction",
     "image": "../../assets/images/login-main.png",
-    "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
+    //"callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
+    "handler": function (response:any){
+        alert("Payment Success");
+        console.log(response.razorpay_payment_id);
+        console.log(response.razorpay_order_id);
+        console.log(response.razorpay_signature);
+    },
+    //"redirect":true,
     "order_id":"",
     "prefill": {
         "name": "User",
@@ -32,14 +39,28 @@ export class PaymentComponent implements OnInit {
     },
     "theme": {
         "color": "#3399cc"
+    },
+    "retry": {
+      "enabled" : false,
+      "max_count": 1
     }
   };
-
+  
   razorPay(){
     let rzp1 = new this.paymentService.nativeWindow.Razorpay(this.options);
     rzp1.open();
-  }
-
+    rzp1.on('payment.failed',
+      function (response:any){
+      alert("Payment Failed");
+      console.log(response.error.code);
+      console.log(response.error.description);
+      console.log(response.error.source);
+      console.log(response.error.step);
+      console.log(response.error.reason);
+      console.log(response.error.metadata.order_id);
+      console.log(response.error.metadata.payment_id);
+});
+}
   shippingForm = this.formBuilder.group({
     name : ['',Validators.required],
     addressLine : ['',Validators.required],
@@ -63,7 +84,7 @@ export class PaymentComponent implements OnInit {
 
     if(this.shippingForm.controls['pincode'].errors?.['minlength'])
     {return "Enter 6 digits Pincode"}
-    else{return "";}
+    else{return ""}
   }
 
   pincodeInvalid(){
@@ -72,11 +93,11 @@ export class PaymentComponent implements OnInit {
 
   phoneNumberErrorMsg() {
     if(this.shippingForm.controls['phoneNumber'].errors?.['required'])
-    {return "Phone Number is required"}
+    {return "Phone Number is required";}
 
     if(this.shippingForm.controls['phoneNumber'].errors?.['minlength'])
-    {return "Enter 10 digits Phone Number"}
-    else{ return ""; } 
+    {return "Enter 10 digits Phone Number";}
+    else{ return "";} 
   }
 
   phoneNumberInvalid(){
