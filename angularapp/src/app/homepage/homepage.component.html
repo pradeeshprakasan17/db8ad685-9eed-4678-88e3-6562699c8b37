@@ -23,6 +23,10 @@
                 <p id="price-tag"><i class="bi bi-tags-fill"></i> &#8377;{{product.product_price}}</p>
             </div>
 
+            <div >
+              <a [routerLink]="['/details-product', product.id]" routerLinkActive="active" class="nav-link"><B>For more Details</B></a>
+            </div>
+
             <mat-card-actions>
               <div class="stock">
               <span *ngIf="product.product_quantity==0" class="text-danger">

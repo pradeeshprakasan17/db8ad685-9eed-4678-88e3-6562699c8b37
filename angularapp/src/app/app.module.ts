@@ -17,7 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//Angular Component Import
+//Angular Components
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
@@ -26,6 +26,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { HomepageNavbarComponent } from './homepage-navbar/homepage-navbar.component';
 import { HomepageFooterComponent } from './homepage-footer/homepage-footer.component';
 import { CartComponent } from './cart/cart.component';
+import { CartCheckoutComponent } from './cart-checkout/cart-checkout.component';
 import { OrdersComponent } from './orders/orders.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UserDisplayComponent } from './user-display/user-display.component';
@@ -33,9 +34,8 @@ import { UserUpdateComponent } from './user-update/user-update.component';
 import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductDisplayComponent } from './product-display/product-display.component';
 import { ProductUpdateComponent } from './product-update/product-update.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 import { PaymentComponent } from './payment/payment.component';
-
-
 
 @NgModule({
   declarations: [
@@ -55,8 +55,8 @@ import { PaymentComponent } from './payment/payment.component';
     ProductDisplayComponent,
     ProductUpdateComponent,
     PaymentComponent,
-    
-    
+    ProductDetailsComponent,
+    CartCheckoutComponent,  
   ],
   imports: [
     BrowserModule,
