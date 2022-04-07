@@ -3,7 +3,6 @@ import { Product } from 'src/models/product';
 import { CartService } from 'src/services/cart.service';
 import { ProductService } from 'src/services/product.service';
 
-
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -21,7 +20,7 @@ export class HomepageComponent implements OnInit {
       },
       {id:2,
         product_name: "HI",
-        product_price: 500,
+        product_price: 5005,
         product_img: "",
         product_desc: "tycg",
         product_quantity: "15"

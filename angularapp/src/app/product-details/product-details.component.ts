@@ -12,7 +12,7 @@ import { ProductService } from 'src/services/product.service';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
- id: any
+  id: any;
   product: Product = new Product();
 
   constructor(private productService: ProductService,private cartService:CartService,
@@ -29,7 +29,6 @@ export class ProductDetailsComponent implements OnInit {
                   else{ return false; }
               }
               addToCart(theProduct: Product) {
-
                 console.log(`Adding to cart: ${this.product.product_name}, ${this.product.product_price}`);
                 const theCartItem = new CartItem(this.product);
                 this.cartService.addToCart(theCartItem);
