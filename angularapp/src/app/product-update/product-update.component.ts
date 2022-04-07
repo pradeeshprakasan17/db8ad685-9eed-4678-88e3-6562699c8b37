@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from '../../services/product-service/product';
-import { ProductService } from '../../services/product-service/product.service';
+import { Product } from 'src/models/product';
+import { ProductService } from 'src/services/product.service';
+
 @Component({
   selector: 'app-product-update',
   templateUrl: './product-update.component.html',
@@ -25,7 +26,7 @@ export class ProductUpdateComponent implements OnInit {
     this.productService.updateProduct(this.id , this.product).subscribe(data =>{
     this.goToProductList();
     },
-     error => console.log(error));
+    error => console.log(error));
   }
   
   goToProductList(){

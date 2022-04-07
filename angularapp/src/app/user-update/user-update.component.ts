@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from 'src/services/user-service/user';
-import { UserService } from 'src/services/user-service/user.service'; 
+import { User } from 'src/models/user';
+import { UserService } from 'src/services/user.service';
+
 
 @Component({
   selector: 'app-user-update',
@@ -11,7 +12,8 @@ import { UserService } from 'src/services/user-service/user.service';
 export class UserUpdateComponent implements OnInit {
   id: any;
   user: User =new User();
-    constructor(private userService: UserService,
+    
+  constructor(private userService: UserService,
       private route: ActivatedRoute,
       private router: Router){ }
 

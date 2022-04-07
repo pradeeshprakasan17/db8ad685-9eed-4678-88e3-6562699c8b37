@@ -8,6 +8,9 @@
     <a mat-button id="productOrderButton" class="userButton" routerLink="/orders"><i class="bi bi-bag-fill"></i>My Orders</a>
     </div>
 
+    <input class="form-control" type="text" name="product_name" [(ngModel)]="product_name" (ngModelChange)="Search()"
+        placeholder="Enter Name of Product to Search">
+
     <div class="logout-tag">
     <a mat-button id="logoutButton" routerLink="/login" color="blue"><i class="bi bi-box-arrow-right"></i>LogOut</a>
     </div>
