@@ -11,7 +11,22 @@ import { ProductService } from 'src/services/product.service';
 })
 export class HomepageComponent implements OnInit {
   
-  productItems : Product[] = [];
+  productItems : Product[] = [
+    {id:1,
+      product_name: "HI",
+      product_price: 500,
+      product_img: "",
+      product_desc: "tycg",
+      product_quantity: "15"
+      },
+      {id:2,
+        product_name: "HI",
+        product_price: 500,
+        product_img: "",
+        product_desc: "tycg",
+        product_quantity: "15"
+      }
+  ];
 
   gridColumns = 3;
 
