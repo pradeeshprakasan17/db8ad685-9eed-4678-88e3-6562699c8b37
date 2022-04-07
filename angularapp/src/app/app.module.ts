@@ -23,17 +23,18 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { UserNavbarComponent } from './homepage-navbar/user-navbar.component';
+import { HomepageNavbarComponent } from './homepage-navbar/homepage-navbar.component';
+import { HomepageFooterComponent } from './homepage-footer/homepage-footer.component';
 import { CartComponent } from './cart/cart.component';
 import { OrdersComponent } from './orders/orders.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UserDisplayComponent } from './user-display/user-display.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
-import { FooterHomepageComponent } from './homepage-footer/footer-homepage.component';
 import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductDisplayComponent } from './product-display/product-display.component';
 import { ProductUpdateComponent } from './product-update/product-update.component';
 import { PaymentComponent } from './payment/payment.component';
+
 
 
 @NgModule({
@@ -43,17 +44,19 @@ import { PaymentComponent } from './payment/payment.component';
     LoginComponent,
     NotFoundComponent,
     HomepageComponent,
-    UserNavbarComponent,
+    HomepageNavbarComponent ,
+    HomepageFooterComponent,
     CartComponent,
     OrdersComponent,
     AdminDashboardComponent,
     UserDisplayComponent,
     UserUpdateComponent,
-    FooterHomepageComponent,
     ProductAddComponent,
     ProductDisplayComponent,
     ProductUpdateComponent,
-    PaymentComponent 
+    PaymentComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
