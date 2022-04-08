@@ -11,27 +11,8 @@ import { ProductService } from 'src/services/product.service';
 })
 export class HomepageComponent implements OnInit {
   
-  productItems : Product[] = [
-    {id: 1,
-    product_name: "Hello",
-    product_price: 1500,
-    product_img: "../../assets/images/login-main.png",
-    product_desc: "vashjasjsa",
-    product_quantity: 150},
-    {id: 2,
-      product_name: "Hello",
-      product_price: 10,
-      product_img: "../../assets/images/login-main.png",
-      product_desc: "vashjasjsa",
-      product_quantity: 1},
-      {id:3,
-        product_name: "Hello",
-        product_price: 1500,
-        product_img: "../../assets/images/login-main.png",
-        product_desc: "vashjasjsa",
-        product_quantity: 0}
-
-  ];
+  productItems : Product[] = [];
+  
   gridColumns = 3;
 
   constructor(private productService:ProductService,private cartService:CartService) { }
